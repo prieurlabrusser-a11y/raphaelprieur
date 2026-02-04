@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrière | Raphaël Prieur</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .timeline {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .timeline-item {
+            display: grid;
+            grid-template-columns: 150px 1fr;
+            gap: 4rem;
+            margin-bottom: 4rem;
+            padding-bottom: 4rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .timeline-item:last-child {
+            border-bottom: none;
+        }
+
+        .timeline-date {
+            font-size: 0.9rem;
+            color: var(--accent);
+            letter-spacing: 0.5px;
+            padding-top: 0.3rem;
+        }
+
+        .timeline-content h3 {
+            font-size: 1.8rem;
+            font-weight: 400;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content h4 {
+            font-size: 1.1rem;
+            font-weight: 400;
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .timeline-content p {
+            color: var(--secondary);
+            line-height: 1.8;
+        }
+
+        .timeline-content ul {
+            margin-top: 1rem;
+            list-style: none;
+            padding: 0;
+        }
+
+        .timeline-content li {
+            color: var(--secondary);
+            line-height: 1.8;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content li::before {
+            content: '—';
+            margin-right: 1rem;
+            color: var(--accent);
+        }
+
+        .education-section {
+            background: var(--white);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            margin-top: 5rem;
+        }
+
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+        }
+
+        .education-card {
+            padding: 3rem;
+            border: 1px solid var(--border);
+        }
+
+        .education-card h3 {
+            font-size: 1.8rem;
+            font-weight: 400;
+            margin-bottom: 1rem;
+        }
+
+        .education-card h4 {
+            font-size: 1.1rem;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+        }
+
+        .education-card p,
+        .education-card li {
+            color: var(--secondary);
+            line-height: 1.8;
+            margin-bottom: 0.8rem;
+        }
+
+        .education-card ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 1.5rem;
+        }
+
+        .education-card li::before {
+            content: '•';
+            margin-right: 1rem;
+            color: var(--accent);
+        }
+
+        .certifications-section {
+            padding: 5rem 0;
+        }
+
+        .certifications-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .certification-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            padding: 2.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .certification-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .cert-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .cert-icon {
+            font-size: 2rem;
+        }
+
+        .cert-date {
+            font-size: 0.85rem;
+            color: var(--accent);
+            letter-spacing: 0.5px;
+        }
+
+        .certification-card h3 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 0.5rem;
+        }
+
+        .certification-card h4 {
+            font-size: 1rem;
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .certification-card p {
+            color: var(--secondary);
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 768px) {
+            .timeline-item {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .education-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .education-card {
+                padding: 2rem;
+            }
+
+            .certifications-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .certification-card {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">RAPHAËL PRIEUR</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="projets.html">Projets</a></li>
+                <li><a href="carriere.html" class="active">Carrière</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container-narrow">
+        <div class="page-header fade-in">
+            <h1 class="page-title">Mon Parcours</h1>
+            <p class="page-subtitle">
+                Un cheminement qui allie formation académique et expériences professionnelles variées
+            </p>
+        </div>
+
+        <!-- Experience Timeline -->
+        <div class="timeline fade-in">
+            <div class="timeline-item">
+                <div class="timeline-date">Avril — Août 2025</div>
+                <div class="timeline-content">
+                    <h3>Stage Optimisation SEO</h3>
+                    <h4>Verotex</h4>
+                    <p>
+                        Mission complète d'optimisation du référencement naturel et de création 
+                        de contenu digital pour le site web de l'entreprise.
+                    </p>
+                    <ul>
+                        <li>Audit et optimisation SEO du site web</li>
+                        <li>Création de vidéos tutorielles de couture</li>
+                        <li>Production de visuels et designs pour le web</li>
+                        <li>Mise en place d'une stratégie de contenu</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date">Juin — Juillet 2024</div>
+                <div class="timeline-content">
+                    <h3>Agent de Maintenance Ferroviaire</h3>
+                    <h4>SNCF</h4>
+                    <p>
+                        Expérience enrichissante dans un environnement exigeant, développement 
+                        de compétences en rigueur, travail d'équipe et gestion des priorités.
+                    </p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date">Juillet — Août 2023</div>
+                <div class="timeline-content">
+                    <h3>Accueil et Animateur</h3>
+                    <h4>SNBSM</h4>
+                    <p>
+                        Animation d'activités et accueil du public. Développement de soft skills 
+                        en communication, gestion de groupe et organisation d'événements.
+                    </p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date">Juillet 2022</div>
+                <div class="timeline-content">
+                    <h3>Assistant Service Santé</h3>
+                    <h4>Prévoir</h4>
+                    <p>
+                        Première expérience professionnelle en entreprise. Découverte du monde 
+                        de l'assurance et du service client.
+                    </p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date">2020 — 2023</div>
+                <div class="timeline-content">
+                    <h3>Bénévole</h3>
+                    <h4>SNBSM</h4>
+                    <p>
+                        Engagement associatif sur plusieurs années, développement de l'esprit 
+                        d'équipe et de la responsabilité.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Education Section -->
+    <section class="education-section">
+        <div class="container">
+            <div class="page-header">
+                <h2 class="page-title" style="font-size: 2.5rem;">Formation</h2>
+            </div>
+
+            <div class="education-grid fade-in">
+                <div class="education-card">
+                    <h3>Double Master</h3>
+                    <h4>EMLV × IIM — 2025-2027</h4>
+                    <p>
+                        Programme unique combinant marketing digital et data analytics. 
+                        Double diplôme d'une école de commerce et d'une école du digital.
+                    </p>
+                    <ul>
+                        <li>Marketing digital avancé : SEO/SEA, e-commerce, social media</li>
+                        <li>Data analytics : collecte, analyse et visualisation de données</li>
+                        <li>Stratégie digitale et communication</li>
+                        <li>Approche transversale marketing/data</li>
+                    </ul>
+                </div>
+
+                <div class="education-card">
+                    <h3>Programme Grande École</h3>
+                    <h4>EMLV — 2022-2027</h4>
+                    <p>
+                        Formation complète en management et commerce avec spécialisation 
+                        en marketing digital et analyse de données.
+                    </p>
+                    <ul>
+                        <li>Fondamentaux : marketing, finance, comptabilité, droit</li>
+                        <li>Digital & Data : analytics, marketing numérique</li>
+                        <li>Soft skills : personal branding, gestion de projet agile</li>
+                        <li>Échange universitaire (Budapest University)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="text-center mt-5">
+                <h3 style="font-size: 1.8rem; font-weight: 400; margin-bottom: 2rem;">Compétences techniques</h3>
+                <div class="grid grid-3">
+                    <div>
+                        <h4 style="color: var(--accent); margin-bottom: 1rem;">Logiciels</h4>
+                        <p class="text-secondary">Suite Adobe, Canva, Design Thinking</p>
+                    </div>
+                    <div>
+                        <h4 style="color: var(--accent); margin-bottom: 1rem;">Langues</h4>
+                        <p class="text-secondary">Français (natif), Anglais (courant)</p>
+                    </div>
+                    <div>
+                        <h4 style="color: var(--accent); margin-bottom: 1rem;">Montage</h4>
+                        <p class="text-secondary">Montage vidéo professionnel</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section class="certifications-section">
+        <div class="container">
+            <div class="page-header">
+                <h2 class="page-title" style="font-size: 2.5rem;">Certifications</h2>
+                <p class="page-subtitle">
+                    Formations certifiantes pour renforcer mes compétences en data et marketing digital
+                </p>
+            </div>
+
+            <div class="certifications-grid fade-in">
+                <div class="certification-card">
+                    <div class="cert-header">
+                        <div class="cert-icon"></div>
+                        <div class="cert-date">Décembre 2025</div>
+                    </div>
+                    <h3>Excel</h3>
+                    <h4>Enablers</h4>
+                    <p>
+                        Maîtrise des bases d'Excel : manipulation de données, création et 
+                        personnalisation de tableaux (dont Tableau Croisé Dynamique), graphiques, 
+                        et utilisation de formules et fonctions avancées.
+                    </p>
+                </div>
+
+                <div class="certification-card">
+                    <div class="cert-header">
+                        <div class="cert-icon"></div>
+                        <div class="cert-date">Décembre 2025</div>
+                    </div>
+                    <h3>Google Analytics 4</h3>
+                    <h4>Enablers</h4>
+                    <p>
+                        Mesure et analyse des activités en ligne. Création de comparaisons, 
+                        de rapports personnalisés et de tableaux de bord pour optimiser les performances web.
+                    </p>
+                </div>
+
+                <div class="certification-card">
+                    <div class="cert-header">
+                        <div class="cert-icon"></div>
+                        <div class="cert-date">Decembre 2025</div>
+                    </div>
+                    <h3>Google Tag Manager</h3>
+                    <h4>Enablers</h4>
+                    <p>
+                        Gestion et déploiement de tags grâce à Google Tag Manager. 
+                        Création de tags, déclencheurs et variables pour le suivi analytique avancé.
+                    </p>
+                </div>
+
+                <div class="certification-card">
+                    <div class="cert-header">
+                        <div class="cert-icon"></div>
+                        <div class="cert-date">Décembre 2025</div>
+                    </div>
+                    <h3>Power BI & Power Platform</h3>
+                    <h4>Enablers</h4>
+                    <p>
+                        Maîtrise des outils d'automatisation, d'analyse et de visualisation des données 
+                        avec Microsoft Power Platform et Power BI.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Raphaël Prieur. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>

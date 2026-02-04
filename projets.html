@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projets | Raphaël Prieur</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .project-featured {
+            background: var(--white);
+            border: 1px solid var(--border);
+            padding: 4rem;
+            margin-bottom: 4rem;
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .project-title {
+            font-size: 3rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+        }
+
+        .project-meta {
+            display: flex;
+            gap: 2rem;
+            color: var(--secondary);
+            font-size: 0.95rem;
+        }
+
+        .project-tags {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .tag {
+            padding: 0.5rem 1.2rem;
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+        }
+
+        .project-link {
+            text-decoration: none;
+            color: var(--accent);
+            font-size: 0.95rem;
+            border-bottom: 1px solid var(--accent);
+            transition: all 0.3s ease;
+        }
+
+        .project-link:hover {
+            color: var(--primary);
+            border-color: var(--primary);
+        }
+
+        .project-details {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .detail-section h3 {
+            font-size: 1.3rem;
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+
+        .detail-section p,
+        .detail-section li {
+            color: var(--secondary);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .detail-section ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .detail-section li::before {
+            content: '—';
+            margin-right: 1rem;
+            color: var(--accent);
+        }
+
+        .skills-list {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .skill-item {
+            text-align: center;
+            padding: 2rem;
+            border: 1px solid var(--border);
+            background: var(--white);
+        }
+
+        .skill-item h4 {
+            font-size: 1.1rem;
+            font-weight: 400;
+            margin-bottom: 0.5rem;
+        }
+
+        .skill-item p {
+            font-size: 0.9rem;
+            color: var(--secondary);
+        }
+
+        @media (max-width: 768px) {
+            .project-featured {
+                padding: 2rem;
+            }
+
+            .project-header {
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            .project-title {
+                font-size: 2rem;
+            }
+
+            .project-details {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .skills-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">RAPHAËL PRIEUR</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="projets.html" class="active">Projets</a></li>
+                <li><a href="carriere.html">Carrière</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+        <div class="page-header fade-in">
+            <h1 class="page-title">Mes Projets</h1>
+            <p class="page-subtitle">
+                Découvrez mes réalisations en marketing digital, SEO et création de contenu
+            </p>
+        </div>
+
+        <!-- Featured Project -->
+        <div class="project-featured fade-in">
+            <div class="project-header">
+                <div>
+                    <h2 class="project-title">Verotex</h2>
+                    <div class="project-meta">
+                        <span>Optimisation SEO</span>
+                        <span>Avril — Août 2025</span>
+                    </div>
+                    <div class="project-tags">
+                        <span class="tag">SEO</span>
+                        <span class="tag">Création vidéo</span>
+                        <span class="tag">Design web</span>
+                        <span class="tag">Content marketing</span>
+                    </div>
+                </div>
+                <a href="https://verotex.be/" target="_blank" class="project-link">Voir le site →</a>
+            </div>
+
+            <div class="project-details">
+                <div class="detail-section">
+                    <h3>Contexte</h3>
+                    <p>
+                        Stage de 5 mois chez Verotex, entreprise spécialisée dans les tissus et accessoires de couture. 
+                        Mission principale : améliorer la visibilité en ligne et créer du contenu engageant pour le site web.
+                    </p>
+                </div>
+
+                <div class="detail-section">
+                    <h3>Objectifs</h3>
+                    <ul>
+                        <li>Optimiser le référencement naturel du site</li>
+                        <li>Créer du contenu vidéo pédagogique</li>
+                        <li>Améliorer l'expérience utilisateur</li>
+                        <li>Augmenter le trafic organique</li>
+                    </ul>
+                </div>
+
+                <div class="detail-section">
+                    <h3>Réalisations</h3>
+                    <ul>
+                        <li>Audit SEO complet du site web</li>
+                        <li>Optimisation des balises et métadonnées</li>
+                        <li>Création de vidéos tutorielles de couture</li>
+                        <li>Production de visuels pour le site</li>
+                        <li>Stratégie de contenu long terme</li>
+                    </ul>
+                </div>
+
+                <div class="detail-section">
+                    <h3>Résultats</h3>
+                    <p>
+                        Mise en place d'une stratégie SEO durable, création d'un catalogue de vidéos 
+                        pédagogiques et amélioration de la structure du contenu web pour une meilleure 
+                        visibilité sur les moteurs de recherche.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Compétences développées -->
+        <div class="page-header">
+            <h2 class="page-title" style="font-size: 2.5rem;">Compétences développées</h2>
+        </div>
+
+        <div class="skills-list fade-in">
+            <div class="skill-item">
+                <h4>SEO / SEA</h4>
+                <p>Optimisation on-page et off-page, recherche de mots-clés, analyse de performance</p>
+            </div>
+
+            <div class="skill-item">
+                <h4>Montage vidéo</h4>
+                <p>Création de contenu vidéo pédagogique avec la Suite Adobe</p>
+            </div>
+
+            <div class="skill-item">
+                <h4>Design web</h4>
+                <p>Création de visuels attractifs avec Canva et Adobe Creative Suite</p>
+            </div>
+
+            <div class="skill-item">
+                <h4>Data Analytics</h4>
+                <p>Analyse de performances, Google Analytics, tracking et reporting</p>
+            </div>
+
+            <div class="skill-item">
+                <h4>Content Strategy</h4>
+                <p>Planification éditoriale, storytelling et optimisation de contenu</p>
+            </div>
+
+            <div class="skill-item">
+                <h4>Gestion de projet</h4>
+                <p>Organisation, respect des délais, coordination et communication</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Raphaël Prieur. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>
